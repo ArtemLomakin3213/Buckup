@@ -1,0 +1,68 @@
+﻿<Window x:Class="WpfApp1.DBWidows"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Height="500"
+        Width="400" 
+        FontFamily="Cascadia Code" 
+        Foreground="White" 
+        Background="#1D2425" 
+        FontSize="16"
+        AllowsTransparency="True">
+    <Grid>
+        <!--Разметка формы-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.2*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0.2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <!--Шапка программы-->
+        <Grid x:Name="header" Grid.ColumnSpan="5" Background="#434B4B" MouseDown="header_MouseDown" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="231*"/>
+                <ColumnDefinition Width="169*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="BackupGuard(1.0.0-alpha) " FontSize="11" VerticalAlignment="Center" Padding="10,0,0,0" Grid.ColumnSpan="2"/>
+            <Button x:Name="Close" Width="20" Margin="147,0,0,0" HorizontalAlignment="Left" BorderThickness="0"
+         Background="#434B4B" FontFamily="Cascadia Code"
+         Foreground="White" FontSize="10" Content="X" Grid.Column="1" Height="15" VerticalAlignment="Center" RenderTransformOrigin="0.533,0.133" Click="Close_Click"/>
+            <Button x:Name="hide" Width="20" Height="15" Margin="22,0" HorizontalAlignment="Right" BorderThickness="0"
+         Background="#434B4B" FontFamily="Cascadia Code"
+         Foreground="White" FontSize="10" Content="-" Grid.Column="1" Click="hide_button_Click"/>
+        </Grid>
+        <!--Основная часть-->
+        <TextBlock Text="Название:" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="name_textbox" Background="LightGray" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="5,24"></TextBox>
+        <TextBlock Text="Сервер:" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="server_textbox" Background="LightGray" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="5,24"></TextBox>
+        <TextBlock Text="База данных:" Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="db_textbox" Background="LightGray" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="3" Margin="5,24"></TextBox>
+        <CheckBox x:Name="isAuth_checkbox" Grid.Column="1" Margin="20" Grid.ColumnSpan="3" Grid.Row="4" VerticalAlignment="Center" 
+                  HorizontalAlignment="Left" Content="Авторизация" Foreground="White"></CheckBox>
+        <TextBlock Text="Пользователь:" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="user_textbox" Background="LightGray" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="5" Margin="5,24"></TextBox>
+        <TextBlock Text="Пароль:" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+        <TextBox x:Name="password_textbox" Background="LightGray" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="6" Margin="5,24"></TextBox>
+        <Button x:Name="close" Grid.Row="7" Grid.Column="1" Margin="10,20" FontFamily="Cascadia Code"
+                  Foreground="White" FontSize="16" Background="#434B4B" Content="Назад" Click="close_Click_1"></Button>
+        <Button x:Name="save" Grid.Row="7" Grid.Column="3" Margin="10,20" FontFamily="Cascadia Code"
+                  Foreground="White" FontSize="16" Background="DarkOrange" Content="Сохранить" Click="save_Click"></Button>
+    </Grid>
+</Window>
